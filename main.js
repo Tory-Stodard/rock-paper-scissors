@@ -1,6 +1,10 @@
 let computerScore = 0;
 let playerScore = 0;
 
+alert(
+  "Welcome to Rock, Paper, Scissors! \nThis games output is displayed in the console. Press shift + ctrl + j to open the console \nWe'll play 5 rounds. I'll keep track of the score \nClick ok to begin!"
+);
+
 game();
 
 function game() {
@@ -10,9 +14,16 @@ function game() {
     console.log(playRound(computerSelection, playerSelection));
   }
 
-  console.log(
-    `Computer score = ${computerScore}, Player score = ${playerScore}`
-  );
+  const finalScore = `Computer score = ${computerScore}, Player score = ${playerScore}`;
+  if (playerScore < computerScore) {
+    console.log("You Loose " + finalScore);
+  } else if (playerScore > computerScore) {
+    console.log("You Win! " + finalScore);
+  } else {
+    console.log("Tie Game! " + finalScore);
+  }
+
+  playAgain();
 }
 
 function getComputerChoice() {
@@ -60,5 +71,20 @@ function playRound(computerSelection, playerSelection) {
     return "You loose this round! Scissors beats paper";
   } else {
     return `Its a tie! We both chose ${playerSelection}`;
+  }
+}
+
+function playAgain() {
+  const answer = prompt(
+    "Would you like to play again? Enter Yes or No."
+  ).toLowerCase();
+  switch (answer) {
+    case "yes":
+    case "y":
+      location.reload();
+      break;
+    default:
+      alert("Thank for playing!");
+      break;
   }
 }
