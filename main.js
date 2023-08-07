@@ -1,10 +1,6 @@
 let computerScore = 0;
 let playerScore = 0;
 
-alert(
-  "Welcome to Rock, Paper, Scissors! \nThis games output is displayed in the console. Press shift + ctrl + j to open the console \nWe'll play 5 rounds. I'll keep track of the score \nClick ok to begin!"
-);
-
 game();
 
 function game() {
