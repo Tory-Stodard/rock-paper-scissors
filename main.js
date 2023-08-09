@@ -38,10 +38,10 @@ function updateResults(playerSelection, computerSelection, roundResult) {
   resultsDiv.textContent = `Player Chose: ${playerSelection} | Computer Chose: ${computerSelection} | ${roundResult}`;
 }
 
-function updateScore(winner) {
+function updateScore(roundWinner) {
   const playerScoreDiv = document.querySelector('#player-score');
   const computerScoreDiv = document.querySelector('#computer-score');
-  switch (winner) {
+  switch (roundWinner) {
     case 'player':
       playerScore++;
       playerScoreDiv.textContent = `Player Score: ${playerScore}`;
@@ -51,4 +51,29 @@ function updateScore(winner) {
       computerScoreDiv.textContent = `Computer Score: ${computerScore}`;
       break;
   }
+  if (playerScore === 5) {
+    gameOver('player');
+  } else if (computerScore === 5) {
+    gameOver('computer');
+  }
+}
+
+function gameOver(winner) {
+  const gameBtns = document.querySelectorAll('button');
+  const subtitle = document.querySelector('#subtitle');
+  const playAgainBtn = document.createElement('button');
+
+  switch (winner) {
+    case 'player':
+      subtitle.textContent = 'Congradulations! You beat me!';
+      break;
+    case 'computer':
+      subtitle.textContent = 'Better luck next time! I win!';
+      break;
+  }
+
+  gameBtns.forEach((element) => element.remove());
+  playAgainBtn.textContent = 'Play Again?';
+  playAgainBtn.addEventListener('click', () => location.reload());
+  document.body.appendChild(playAgainBtn);
 }
