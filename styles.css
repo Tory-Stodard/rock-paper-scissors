@@ -1,8 +1,8 @@
 :root {
-  --color1: #272829;
-  --color2: #61677a;
-  --color3: #d8d9da;
-  --color4: #fff6e0;
+  --color1: #283149;
+  --color2: #404b69;
+  --color3: #dbedf3;
+  --color4: #f73859;
 }
 
 * {
@@ -13,22 +13,30 @@
 
 body {
   color: var(--color3);
+  font-size: 1.25rem;
 }
 
 h1 {
-  color: var(--color4);
-  font-size: 2.5rem;
+  color: var(--color3);
+  font-size: 3rem;
+  font-weight: 900;
 }
 
 button {
   width: 150px;
   background-color: var(--color4);
-  color: var(--color1);
+  color: var(--color3);
   padding: 0.75rem 0;
-  border: 1px solid transparent;
+  border: 2px solid var(--color3);
   border-radius: 8px;
   margin-left: 10px;
   font-size: 1rem;
+  transition: all 0.2s ease-in-out;
+}
+
+button:hover {
+  transform: scale(1.1);
+  cursor: pointer;
 }
 
 #game {
