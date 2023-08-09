@@ -61,6 +61,7 @@ function updateScore(roundWinner) {
 function gameOver(winner) {
   const gameBtns = document.querySelectorAll('button');
   const subtitle = document.querySelector('#subtitle');
+  const btnsDiv = document.querySelector('.buttons');
   const playAgainBtn = document.createElement('button');
 
   switch (winner) {
@@ -75,5 +76,5 @@ function gameOver(winner) {
   gameBtns.forEach((element) => element.remove());
   playAgainBtn.textContent = 'Play Again?';
   playAgainBtn.addEventListener('click', () => location.reload());
-  document.body.appendChild(playAgainBtn);
+  btnsDiv.appendChild(playAgainBtn);
 }
