@@ -66,7 +66,7 @@ function gameOver(winner) {
 
   switch (winner) {
     case 'player':
-      subtitle.textContent = 'Congradulations! You beat me!';
+      subtitle.textContent = 'Congratulations! You beat me!';
       break;
     case 'computer':
       subtitle.textContent = 'Better luck next time! I win!';
