@@ -54,6 +54,12 @@ button:hover {
   cursor: pointer;
 }
 
+button:active {
+  background-color: var(--color3);
+  color: var(--color4);
+  border-color: var(--color4);
+}
+
 #rock-btn {
   margin-left: 0;
 }
@@ -70,5 +76,12 @@ button:hover {
 
   button {
     width: 100px;
+  }
+}
+
+@media (max-width: 400px) {
+  button {
+    width: 75px;
+    font-size: 0.75rem;
   }
 }
