@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Handjet&display=swap');
+
 :root {
   --color1: #283149;
   --color2: #404b69;
@@ -13,6 +15,7 @@
 
 body {
   color: var(--color3);
+  font-family: 'Handjet', cursive;
 }
 
 #game {
@@ -46,6 +49,7 @@ button {
   border-radius: 8px;
   margin-left: 10px;
   font-size: 1rem;
+  font-family: 'Handjet', cursive;
   transition: all 0.2s ease-in-out;
 }
 
